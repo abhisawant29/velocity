@@ -10,7 +10,7 @@ pipeline{
              stages{
                  stage('deploy httpd'){
                       steps{
-                            sh "echo 'test'>>/var/www/html/index.html"
+                            sh "echo '22Q1'>>/var/www/html/index.html"
                              sh "sudo chmod -R 777 /var/www/html"
        }
 }
