@@ -8,10 +8,18 @@ pipeline{
 
                
              stages{
-                 stage('stage-1'){
+                 stage('deploy httpd'){
                       steps{
-                            sh "mkdir test"
+                            sh "echo 'test'>>/var/www/html/index.html"
+                             sh "sudo chmod -R 777 /var/www/html"
        }
 }
+                      stage('restart httpd'){
+                               steps{
+                                      sh "sudo service httpd restart"
+                                        
+                                        
+                               }
   }
 }            
+}
